@@ -1,0 +1,226 @@
+/* Mobile-first, dark aesthetic inspired */
+:root {
+    --bg: #0f0f12;
+    --card: #16161a;
+    --text: #f8f8ff;
+    --muted: #b7b7c5;
+    --accent: #ff7276;
+    --accent-2: #5eead4;
+    --ring: rgba(255,114,118,.35);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(1200px 800px at 20% -10%, #1f1f29, var(--bg));
+    color: var(--text);
+    font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+#message {
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.card {
+    max-width: 420px;
+    margin: 32px auto;
+    padding: 0 20px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent 30%), var(--card);
+}
+
+.top {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.badge {
+    width: 379px;
+    height: 30px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, var(--accent), #ffb3b5);
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-weight: 700;
+}
+
+.title {
+    /* Não precisa mais ser flex-direction: column ou justify-content aqui. */
+}
+
+.title h1 {
+    font-size: 18px !important;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    color: var(--accent);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    margin: 0;
+}
+
+.since {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 0px;
+}
+
+.photo-wrap {
+    margin: 14px 0;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.06);
+}
+
+.photo-wrap img {
+    width: 100%;
+    display: block;
+    filter: contrast(1.02) saturate(1.05);
+}
+
+.counter {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 6px 0 10px;
+}
+
+.unit {
+    background: #1c1c22;
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 12px;
+    padding: 10px 8px;
+    text-align: center;
+}
+
+.unit span {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.unit small {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.quote {
+    margin: 8px 0 16px;
+    text-align: center;
+}
+
+.quote p {
+    margin: 6px 0;
+}
+
+.names {
+    color: var(--accent-2);
+    font-weight: 600;
+    letter-spacing: .3px;
+}
+
+.player {
+    margin-top: 6px;
+    display: grid;
+    grid-template-columns: 64px 1fr 52px;
+    gap: 12px;
+    align-items: center;
+    background: #131318;
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 14px;
+    padding: 10px;
+}
+
+.player .art img {
+    width: 64px; height: 64px; border-radius: 10px; object-fit: cover;
+}
+
+.meta {
+    display: grid;
+    gap: 6px;
+}
+
+.song { font-weight: 600; font-size: 14px; }
+.artist { color: var(--muted); font-size: 12px; }
+
+.bar {
+    height: 6px;
+    background: #23232c;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent), #ffa7aa);
+}
+
+.time {
+    display: flex; justify-content: space-between;
+    font-size: 11px; color: var(--muted);
+}
+
+.play {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: radial-gradient(100% 100% at 70% 20%, #fff, #ebf0ff);
+    box-shadow: 0 6px 20px rgba(255,255,255,.2), inset 0 -3px 8px rgba(0,0,0,.25);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.play:active { transform: scale(0.98); }
+
+.foot {
+    margin-top: 14px;
+    display: grid;
+    place-items: center;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+@media (min-width: 720px) {
+    .card { margin: 60px auto; }
+    .title h1 { font-size: 24px; }
+    .unit span { font-size: 26px; }
+}
+
+.heart {
+    position: fixed;
+    top: -10px;
+    font-size: 20px;
+    color: red;
+    animation: fall linear forwards;
+    z-index: 9999;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+.carousel {
+    width: 100%;
+    height: auto;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,.06);
+}
+
+.carousel img {
+    width: 100%;
+    display: block;
+    filter: contrast(1.02) saturate(1.05);
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
